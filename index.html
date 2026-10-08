@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Breakout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="game-container">
+        <header>
+          <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; width: 100%;">
+            <h1>Pong Pong</h1>
+            <div class="header-controls" style="display: flex; gap: 0.5rem;">
+              <button id="hudPauseBtn" class="hud-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; border-width: 1px;">PAUSE</button>
+              <button id="hudRestartBtn" class="hud-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; border-width: 1px;">RESTART</button>
+            </div>
+          </div>
+          <div class="stats" style="width: 100%; justify-content: space-between;">
+            <div class="stat">LEVEL: <span id="level">1</span></div>
+            <div class="stat">SCORE: <span id="score">0</span></div>
+            <div class="stat" style="color: #fcd34d;">HIGH SCORE: <span id="highScore">0</span></div>
+            <div class="stat">LIVES: <span id="lives">3</span></div>
+          </div>
+        </header>
+        
+        <div class="canvas-wrapper">
+          <canvas id="gameCanvas" width="800" height="600"></canvas>
+          
+          <div id="startScreen" class="overlay">
+            <h2>READY?</h2>
+            <p>Use Left/Right arrows or A/D to move</p>
+            <p style="font-size: 0.9rem; margin-top: -10px;">Press P to Pause, R to Restart</p>
+            <button id="startBtn">START GAME</button>
+          </div>
+          
+          <div id="pauseScreen" class="overlay hidden">
+            <h2>PAUSED</h2>
+            <button id="resumeBtn">RESUME</button>
+            <button id="restartPauseBtn">RESTART GAME</button>
+          </div>
+          
+          <div id="gameOverScreen" class="overlay hidden">
+            <h2>GAME OVER</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">PLAY AGAIN</button>
+          </div>
+          
+          <div id="levelCompleteScreen" class="overlay hidden">
+            <h2>LEVEL CLEARED!</h2>
+            <p>Current Score: <span id="levelScore">0</span></p>
+            <button id="nextLevelBtn">NEXT LEVEL</button>
+          </div>
+          
+          <div id="victoryScreen" class="overlay hidden">
+            <h2>YOU WIN!</h2>
+            <p>Final Score: <span id="victoryScore">0</span></p>
+            <button id="restartWinBtn">PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
